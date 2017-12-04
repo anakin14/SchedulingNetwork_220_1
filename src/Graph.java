@@ -1,3 +1,6 @@
+/**
+ * @author Anakin  Kinsey, Ofo Croes, Jonathan Hubbard
+ */
 import java.util.LinkedList;
 import java.util.List;
 

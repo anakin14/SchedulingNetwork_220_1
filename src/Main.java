@@ -1,3 +1,7 @@
+/**
+ * Scheduling Network
+ * @author Anakin  Kinsey, Ofo Croes, Jonathan Hubbard
+ */
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.List;
@@ -30,7 +34,7 @@ public class Main {
 			{
 			finalVertex = Integer.parseInt(input.next());
 			weight = Integer.parseInt(input.next());
-			System.out.println(initialVertex + " " + finalVertex + " " + weight);
+			System.out.println(initialVertex + "-> " + finalVertex + " weight: " + weight);
 			if(initialVertex > 9 && initialVertex < 0){
 				finishInitializing = true;
 				return;
