@@ -41,7 +41,7 @@ public class Main {
 			}
 			else{
 				graph.add(initialVertex, finalVertex, weight);
-				numVertices++;
+			//	numVertices++;
 			}
 			initialVertex = 0;
 			finalVertex = 0;

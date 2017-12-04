@@ -105,6 +105,7 @@ public class Graph {
 			if(Exists(u) == true && Exists(u,x) == true)
 			{
 			curr = AdjacencyList[u].get(x).Weight() + Maximum(AdjacencyList[u].get(x).ConnectingNode(), v);
+				//System.out.println("yes2");
 			}
 			if(curr > max)
 				max = curr; 
@@ -135,6 +136,10 @@ public class Graph {
 		try
 		{
 			Edge e = AdjacencyList[u].get(x);
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			return false;
 		}
 		catch(IndexOutOfBoundsException e)
 		{
