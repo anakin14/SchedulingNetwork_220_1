@@ -9,14 +9,29 @@ public class Main {
 		
 		Graph graph = new Graph(9);
 		
+		/*
+		graph.add(0, 1, 2);
+		graph.add(0, 3, 3);
+		graph.add(1, 2, 1);
+		graph.add(2, 3, 3);
+		graph.add(2, 5, 5);
+		graph.add(2, 4, 2);
+		graph.add(2, 6, 3);
+	//	graph.add(5, 4, 4);
+		graph.add(5, 6, 1);
+		graph.add(5, 7, 1);
+		graph.add(6, 7, 4);
+		graph.add(4, 7, 3);
+		*/
 		
-		graph.add(5, 6, 9);
-		graph.add(6, 7, 8);
-		graph.add(0, 1, 1);
-		graph.add(5, 5, 9);
-		graph.add(2, 3, 9);
-		graph.add(6, 7, 9);
-		graph.add(8, 1, 9);
+		graph.add(0, 8, 99);
+		graph.add(8, 9, 100);
+		graph.add(0, 2, 1000);
+		graph.add(2, 9, 1);
+		System.out.println(graph.EarliestArrival(2)+" " );//+ graph.LatestTime(5)+" " +graph.SlackTime(2)+ " " +graph .FloatTime(2, 4));
+		System.out.println(graph.Maximum(0, 2));
+		
+	
 		
 		
 		
@@ -30,7 +45,6 @@ public class Main {
 				System.out.println(x + "-> " + y + " weight: " + graph.print(x,y));
 				}
 		}
-		
 		boolean done = false;
 		int entry;
 		System.out.printf("Now that we have the values, enter 1 to calculate\n"

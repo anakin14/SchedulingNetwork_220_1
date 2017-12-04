@@ -15,7 +15,7 @@ public class Graph {
 	}
 	}
 	
-	public void add(int i, int j, double weight)
+	public void add(int i, int j, int weight)
 	{
 		Edge temp = new Edge(j, weight);
 		AdjacencyList[i].add(temp);
@@ -54,38 +54,90 @@ public class Graph {
 		return 0;
 	}
 	
-	
-	public int EarliestArrival()
+	/**
+	 * A(v) = M(s,v), earliest we can arrive at v having finished all tasks before it
+	 * @return
+	 */
+	public int EarliestArrival(int v)
 	{
-		int i = 0;
-		return i;
+		return Maximum(0,v);
 	}
-	 
-	public int LatestTime()
+	/**
+	 * L(v) = A(f) - M(v,f), latest time we can leave v and still finish by A(f)
+	 * @return
+	 */
+	public int LatestTime(int v)
 	{
-		int i = 0;
-		return i;
+		return EarliestArrival(9) - Maximum(v, 9);
 	}
-	
-	public int SlackTime()
+	/**
+	 * S(v) = L(v) - A(v), max time all tasks starting at v can be idle without delaying the whole process
+	 * @return
+	 */
+	public int SlackTime(int v)
 	{
-		int i = 0;
-		return i;
+		return LatestTime(v) - EarliestArrival(v);
 	}
-	
-	public int FloatTime()
+	/**
+	 * F(u,v) = L(v) - A(u) - W(u,v)
+	 * @return
+	 */
+	public int FloatTime(int u, int v)
 	{
-		int i = 0;
-		return i;
+		return LatestTime(v) - EarliestArrival(u) - Weight(u,v);
 	}
-	
-	public double Weight(int i, int j)
+	/**
+	 * M(u,v), maximum time starting at u to get to v 
+	 * @param v
+	 * @return
+	 */
+	public int Maximum(int u, int v)
+	{
+		int max = 0;
+		int curr = 0;
+		for(int x = 0; x < size; x++)
+		{
+			if(u == v)
+				return max;
+			if(Exists(u) == true && Exists(u,x) == true)
+			{
+			curr = AdjacencyList[u].get(x).Weight() + Maximum(AdjacencyList[u].get(x).ConnectingNode(), v);
+			}
+			if(curr > max)
+				max = curr; 
+		}
+		return max;
+	}
+	public int Weight(int u, int v)
 	{
 		for(int x = 0; x < AdjacencyList.length; x++)
 		{
-			if( AdjacencyList[i].get(x).ConnectingNode() == j)
-				return AdjacencyList[i].get(x).Weight();
+			if( AdjacencyList[u].get(x).ConnectingNode() == v)
+				return AdjacencyList[u].get(x).Weight();
 		}
 		return 0;
+	}
+	
+	public boolean Exists(int u)
+	{
+		if(AdjacencyList[u].isEmpty() == true)
+		{
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean Exists(int u, int x)
+	{
+		try
+		{
+			Edge e = AdjacencyList[u].get(x);
+		}
+		catch(IndexOutOfBoundsException e)
+		{
+			return false;
+		}
+		
+		return true;
 	}
 }

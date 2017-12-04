@@ -1,10 +1,10 @@
 
 public class Edge {
 	int ConnectingNode;
-	double WeightOfEdge;
+	int WeightOfEdge;
 	
 	
-	public Edge(int i, double j)
+	public Edge(int i, int j)
 	{
 		ConnectingNode = i;
 		WeightOfEdge = j;
@@ -14,7 +14,7 @@ public class Edge {
 		return ConnectingNode;
 	}
 	
-	public double Weight()
+	public int Weight()
 	{
 		return WeightOfEdge;
 	}
