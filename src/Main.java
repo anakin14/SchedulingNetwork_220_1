@@ -75,7 +75,6 @@ public class Main {
 					System.out.println("Not valid value!");
 				else
 				{
-					System.out.println("yes");
 					if(entry == 4)
 					{
 						System.out.println("Float time needs another value to calculate for!\n" +"Value: ");
@@ -92,11 +91,11 @@ public class Main {
 					if(entry == 1)
 						System.out.println("Earliest Arrival time(" + value+ ") = " + graph.EarliestArrival(value));
 					if(entry == 2)
-						System.out.println("Latest Time" + value+ ") = " + graph.LatestTime(value));
+						System.out.println("Latest Time(" + value+ ") = " + graph.LatestTime(value));
 					if(entry == 3)
-						System.out.println("Slack Time" + value+ ") = " + graph.SlackTime(value));
+						System.out.println("Slack Time(" + value+ ") = " + graph.SlackTime(value));
 					if(entry == 4)
-						System.out.println("Float Time" + value+ ", " + value2 + ") = " + graph.FloatTime(value, value2));
+						System.out.println("Float Time(" + value+ ", " + value2 + ") = " + graph.FloatTime(value, value2));
 				
 					System.out.println("Compute another value, press y or n to exit");
 					if(input.next().charAt(0) == 'n')
