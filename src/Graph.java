@@ -98,14 +98,15 @@ public class Graph {
 	{
 		int max = 0;
 		int curr = 0;
-		for(int x = 0; x < size; x++)
+		for(int x = 0; x < 100; x++)
 		{
-			if(u == v)
+			if(u == v || u > v)
 				return max;
-			if(Exists(u) == true && Exists(u,x) == true)
+			if(u == v - 1)
+				return Weight(u, v);
+			if(Exists(u,x) == true)
 			{
 			curr = AdjacencyList[u].get(x).Weight() + Maximum(AdjacencyList[u].get(x).ConnectingNode(), v);
-				//System.out.println("yes2");
 			}
 			if(curr > max)
 				max = curr; 
@@ -120,15 +121,6 @@ public class Graph {
 				return AdjacencyList[u].get(x).Weight();
 		}
 		return 0;
-	}
-	
-	public boolean Exists(int u)
-	{
-		if(AdjacencyList[u].isEmpty() == true)
-		{
-			return false;
-		}
-		return true;
 	}
 	
 	public boolean Exists(int u, int x)
