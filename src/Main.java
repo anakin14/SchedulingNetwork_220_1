@@ -55,11 +55,11 @@ public class Main {
 				finishInitializing = true;
 			}
 		}
-<<<<<<< HEAD
+
 		
-=======
+
 		//test values
->>>>>>> d269a0f598ac7135a5b52f1fbd7345641d1e0b85
+
 		graph.add(0, 1, 25);
 		graph.add(0, 2, 50);
 		graph.add(0, 3, 20);

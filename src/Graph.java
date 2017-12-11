@@ -140,7 +140,7 @@ public class Graph {
 		}
 		return max;
 	}
-<<<<<<< HEAD
+
 	public boolean IsPossible(int u, int v) {
 		for(int x = 0; x < 100; x++)
 		{
@@ -155,14 +155,14 @@ public class Graph {
 		return false;
 	}
 
-=======
+
 	/**
 	 * Weight class: used to give the weight of an edge
 	 * @param u >= 0
 	 * @param v >= 0
 	 * @return Weight of an edge
 	 */
->>>>>>> d269a0f598ac7135a5b52f1fbd7345641d1e0b85
+
 	public int Weight(int u, int v)
 	{
 		for(int x = 0; x < AdjacencyList.length; x++)
