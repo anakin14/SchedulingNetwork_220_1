@@ -144,7 +144,7 @@ public class Graph {
 	 * @param u
 	 * @param v
 	 * @return whether it is possible to vertex u to vertex v by utilizing recursion
-	 * Eliminates all possible paths form the Maximum method that are cannot reach vertex v
+	 * Eliminates all possible paths from the Maximum method that cannot reach vertex v
 	 */
 	public boolean IsPossible(int u, int v) {
 		for(int x = 0; x < 100; x++)
