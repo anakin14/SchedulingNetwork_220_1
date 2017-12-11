@@ -7,7 +7,10 @@ import java.util.List;
 public class Graph {
 	int size;
 	LinkedList<Edge> AdjacencyList[];
-	
+	/**
+	 * Graph method: used to initialize the scheduling network
+	 * @param size cannot be null
+	 */
 	public Graph(int size)
 	{
 		this.size = size;
@@ -17,7 +20,13 @@ public class Graph {
 		AdjacencyList[i] = new LinkedList<Edge>();
 	}
 	}
-	
+	/**
+	 * add method: this method is used to add a initial vertex,
+	 * 	final vetex and weight of an edge into a graph
+	 * @param i >= 0
+	 * @param j >= 0
+	 * @param weight >= 0
+	 */
 	public void add(int i, int j, int weight)
 	{
 		Edge temp = new Edge(j, weight);
@@ -25,7 +34,14 @@ public class Graph {
 		
 		
 	}
-	
+	/**
+	 * hasEdge method: used to check whether two 
+	 * 	vertices have an edge connecting them
+	 * @param i >= 0
+	 * @param j >= 0
+	 * @return true if there is an edge between two vertices,
+	 *  		false if there isn't an edge between two vertices
+	 */
 	public boolean hasEdge(int i, int j)
 	{
 		boolean exit = false;
@@ -46,7 +62,13 @@ public class Graph {
 		return false;
 	}
 	
-	
+	/**
+	 * print method: used to give the weight between two edges in
+	 * 				 the scheduling nework
+	 * @param i >= 0
+	 * @param j >= 0
+	 * @return weight if there is an edge between two given vertices
+	 */
 	public double print(int i, int j)
 	{
 		for(int x = 0; x < size; x++)
@@ -58,41 +80,47 @@ public class Graph {
 	}
 	
 	/**
+	 * EarliestArrival method: used to calculate earliest arrival time.
 	 * A(v) = M(s,v), earliest we can arrive at v having finished all tasks before it
-	 * @return
+	 * @return earliest arrival time
 	 */
 	public int EarliestArrival(int v)
 	{
 		return Maximum(0,v);
 	}
 	/**
+	 * LatestTime method: used to calculate latest arrival time.
 	 * L(v) = A(f) - M(v,f), latest time we can leave v and still finish by A(f)
-	 * @return
+	 * @return latest arrival time
 	 */
 	public int LatestTime(int v)
 	{
 		return EarliestArrival(9) - Maximum(v, 9);
 	}
 	/**
+	 * SlackTime method: used to calculate slack time.
 	 * S(v) = L(v) - A(v), max time all tasks starting at v can be idle without delaying the whole process
-	 * @return
+	 * @return slack time.
 	 */
 	public int SlackTime(int v)
 	{
 		return LatestTime(v) - EarliestArrival(v);
 	}
 	/**
+	 * FloatTime method: used to calculate the float time.
 	 * F(u,v) = L(v) - A(u) - W(u,v)
-	 * @return
+	 * @return float time.
 	 */
 	public int FloatTime(int u, int v)
 	{
 		return LatestTime(v) - EarliestArrival(u) - Weight(u,v);
 	}
 	/**
+	 * Maximum method: used to calculate the maximum time
 	 * M(u,v), maximum time starting at u to get to v 
-	 * @param v
-	 * @return
+	 * @param u >= 0
+	 * @param v >= 0
+	 * @return maximum time
 	 */
 	public int Maximum(int u, int v)
 	{
@@ -113,6 +141,12 @@ public class Graph {
 		}
 		return max;
 	}
+	/**
+	 * Weight class: used to give the weight of an edge
+	 * @param u >= 0
+	 * @param v >= 0
+	 * @return Weight of an edge
+	 */
 	public int Weight(int u, int v)
 	{
 		for(int x = 0; x < AdjacencyList.length; x++)
@@ -122,7 +156,12 @@ public class Graph {
 		}
 		return 0;
 	}
-	
+	/**
+	 * Exists method: used to check whether an edge exists
+	 * @param u >= 0
+	 * @param x >= 0
+	 * @return true if there is an edge, false if there isn't an edge
+	 */
 	public boolean Exists(int u, int x)
 	{
 		try

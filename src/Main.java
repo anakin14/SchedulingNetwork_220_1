@@ -8,7 +8,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
+	/**
+	 * Main method, used to enter values to scheduling network and to
+	 * show the menu of calculations
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		boolean done = false, exit = false;
 		int entry;
@@ -16,6 +20,7 @@ public class Main {
 		int numVertices = 0;
 		Graph graph = new Graph(graphSize);
 		Scanner input = new Scanner(System.in);
+		//here's where menu aquires input to be sent to scheduling network
 		System.out.println("Hello, Welcome to our Scheduling Network program.");
 		boolean finishInitializing = false;
 		int initialVertex = 0;
@@ -50,6 +55,7 @@ public class Main {
 				finishInitializing = true;
 			}
 		}
+		//test values
 		graph.add(0, 1, 25);
 		graph.add(0, 2, 50);
 		graph.add(0, 3, 20);
@@ -73,14 +79,14 @@ public class Main {
 		graph.add(8, 9, 10);
 	
 		
-		System.out.printf("Now that we have the values, enter 1 to calculate\n"
-				+ "the earliest arrival time, 2 to calculate the latest time, 3\n"
-				+ "to calculate slack time and 4 to calculate float time:"
-				+ ".\n");
 		while(!exit){
 		done = false;
-			
+		//here's where the menu for calculations for the scheduling network can be found
 		try{
+			System.out.printf("Please enter 1 to calculate the earliest arrival time,\n"
+					+ "2 to calculate the latest time, 3\n"
+					+ "to calculate slack time and 4 to calculate float time:"
+					+ ".\n");
 			System.out.println("Entry: ");
 		entry = input.nextInt();
 		{
@@ -119,6 +125,7 @@ public class Main {
 				
 					System.out.println("Compute another value, press y or n to exit");
 					if(input.next().charAt(0) == 'n')
+						System.out.println("Thank you for using our program!");
 						exit = true;
 			
 				}
