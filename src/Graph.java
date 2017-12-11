@@ -22,7 +22,7 @@ public class Graph {
 	}
 	/**
 	 * add method: this method is used to add a initial vertex,
-	 * 	final vetex and weight of an edge into a graph
+	 * 	final vertex and weight of an edge into a graph
 	 * @param i >= 0
 	 * @param j >= 0
 	 * @param weight >= 0
@@ -64,7 +64,7 @@ public class Graph {
 	
 	/**
 	 * print method: used to give the weight between two edges in
-	 * 				 the scheduling nework
+	 * 				 the scheduling network
 	 * @param i >= 0
 	 * @param j >= 0
 	 * @return weight if there is an edge between two given vertices
@@ -140,11 +140,12 @@ public class Graph {
 		return max;
 	}
 	/**
-	 * Method: IsPossible 
-	 * @param u
-	 * @param v
-	 * @return whether it is possible to vertex u to vertex v by utilizing recursion
-	 * Eliminates all possible paths from the Maximum method that cannot reach vertex v
+	 * IsPossible method: Eliminates all possible paths from the
+	 * 					Maximum method that cannot reach vertex v
+	 * @param u >= 0
+	 * @param v >= 0
+	 * @return true if from vertex u to vertex v is possible by utilizing recursion
+	 * 
 	 */
 	public boolean IsPossible(int u, int v) {
 		for(int x = 0; x < 100; x++)
@@ -162,7 +163,7 @@ public class Graph {
 
 
 	/**
-	 * Weight class: used to give the weight of an edge
+	 * Weight method: used to give the weight of an edge
 	 * @param u >= 0
 	 * @param v >= 0
 	 * @return Weight of an edge
