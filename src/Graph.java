@@ -100,12 +100,11 @@ public class Graph {
 		int curr = 0;
 		for(int x = 0; x < 100; x++)
 		{
-			if(u == v || u > v)
-				return max;
-			if(u == v - 1)
-				return Weight(u, v);
-			if(Exists(u,x) == true)
+			if(Exists(u,x) == true && IsPossible(AdjacencyList[u].get(x).ConnectingNode, v) == true)
 			{
+			
+			if(u == v)
+				return 0;
 			curr = AdjacencyList[u].get(x).Weight() + Maximum(AdjacencyList[u].get(x).ConnectingNode(), v);
 			}
 			if(curr > max)
@@ -113,6 +112,20 @@ public class Graph {
 		}
 		return max;
 	}
+	public boolean IsPossible(int u, int v) {
+		for(int x = 0; x < 100; x++)
+		{
+			if(u == v)
+				return true;
+			if(Exists(u, x))
+			{
+				if(IsPossible(AdjacencyList[u].get(x).ConnectingNode, v) == true)
+					return true;
+			}
+		}
+		return false;
+	}
+
 	public int Weight(int u, int v)
 	{
 		for(int x = 0; x < AdjacencyList.length; x++)

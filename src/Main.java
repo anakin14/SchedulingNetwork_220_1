@@ -50,6 +50,7 @@ public class Main {
 				finishInitializing = true;
 			}
 		}
+		
 		graph.add(0, 1, 25);
 		graph.add(0, 2, 50);
 		graph.add(0, 3, 20);
@@ -100,7 +101,6 @@ public class Main {
 						System.out.println("Float time needs another value to calculate for!\n" +"Value: ");
 					while(!done)
 					{
-						System.out.println("Value: ");
 						value2 = input.nextInt();
 						if(value > 9 || value < 0)
 							System.out.println("Not valid value!");
