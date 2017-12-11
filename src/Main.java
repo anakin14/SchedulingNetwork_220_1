@@ -64,27 +64,27 @@ public class Main {
 
 		//test values
 
-		graph.add(0, 1, 25);
-		graph.add(0, 2, 50);
-		graph.add(0, 3, 20);
-		graph.add(1, 2, 25);
-		graph.add(1, 4, 20);
-		graph.add(1, 6, 55);
-		graph.add(2, 4, 10);
-		graph.add(2, 5, 15);
-		graph.add(2, 7, 30);
-		graph.add(3, 2, 35);
-		graph.add(3, 5, 20);
-		graph.add(3, 8, 50);
-		graph.add(4, 6, 30);
-		graph.add(4, 7, 35);
-		graph.add(5, 7, 40);
-		graph.add(5, 8, 20);
-		graph.add(6, 9, 25);
-		graph.add(7, 6, 25);
-		graph.add(7, 8, 35);
-		graph.add(7, 9, 45);
-		graph.add(8, 9, 10);
+		//graph.add(0, 1, 25);
+		//graph.add(0, 2, 50);
+		//graph.add(0, 3, 20);
+		//graph.add(1, 2, 25);
+		//graph.add(1, 4, 20);
+		//graph.add(1, 6, 55);
+		//graph.add(2, 4, 10);
+		//graph.add(2, 5, 15);
+		//graph.add(2, 7, 30);
+		//graph.add(3, 2, 35);
+		//graph.add(3, 5, 20);
+		//graph.add(3, 8, 50);
+		//graph.add(4, 6, 30);
+		//graph.add(4, 7, 35);
+		//graph.add(5, 7, 40);
+		//graph.add(5, 8, 20);
+		//graph.add(6, 9, 25);
+		//graph.add(7, 6, 25);
+		//graph.add(7, 8, 35);
+		//graph.add(7, 9, 45);
+		//graph.add(8, 9, 10);
 	
 		
 		while(!exit){
