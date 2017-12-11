@@ -130,7 +130,6 @@ public class Graph {
 		{
 			if(Exists(u,x) == true && IsPossible(AdjacencyList[u].get(x).ConnectingNode, v) == true)
 			{
-			
 			if(u == v)
 				return 0;
 			curr = AdjacencyList[u].get(x).Weight() + Maximum(AdjacencyList[u].get(x).ConnectingNode(), v);
@@ -140,7 +139,13 @@ public class Graph {
 		}
 		return max;
 	}
-
+	/**
+	 * Method: IsPossible 
+	 * @param u
+	 * @param v
+	 * @return whether it is possible to vertex u to vertex v by utilizing recursion
+	 * Eliminates all possible paths form the Maximum method that are cannot reach vertex v
+	 */
 	public boolean IsPossible(int u, int v) {
 		for(int x = 0; x < 100; x++)
 		{

@@ -1,6 +1,10 @@
 /**
  * Scheduling Network
  * @author Anakin  Kinsey, Ofo Croes, Jonathan Hubbard
+ * 
+ * 
+ * References:
+ * 	http://www.mathcs.emory.edu/~cheung/Courses/171/Syllabus/11-Graph/weighted.html
  */
 import java.util.InputMismatchException;
 import java.util.LinkedList;
@@ -20,7 +24,7 @@ public class Main {
 		int numVertices = 0;
 		Graph graph = new Graph(graphSize);
 		Scanner input = new Scanner(System.in);
-		//here's where menu aquires input to be sent to scheduling network
+		//here's where menu acquires input to be sent to scheduling network
 		System.out.println("Hello, Welcome to our Scheduling Network program.");
 		boolean finishInitializing = false;
 		int initialVertex = 0;
@@ -124,12 +128,19 @@ public class Main {
 					if(entry == 3)
 						System.out.println("Slack Time(" + value+ ") = " + graph.SlackTime(value));
 					if(entry == 4)
+						if(graph.hasEdge(value, value2) == true)
+						{
 						System.out.println("Float Time(" + value+ ", " + value2 + ") = " + graph.FloatTime(value, value2));
-				
+						}
+						else
+							System.out.println("Can't compute a float of those 2 values");
 					System.out.println("Compute another value, press y or n to exit");
+					
 					if(input.next().charAt(0) == 'n')
+					{
 						System.out.println("Thank you for using our program!");
 						exit = true;
+					}
 			
 				}
 			done = true;
